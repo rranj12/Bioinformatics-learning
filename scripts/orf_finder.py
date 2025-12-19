@@ -80,9 +80,8 @@ def main():
     minus = find_orfs(str(rc), args.min_length, strand="-")
     minus = map_rev_coords(minus, genome_len)
     for o in minus:
-        # Need DNA sequence in original orientation for translation?
-        # easiest: translate from the reverse-complement ORF DNA itself
-        # We'll reconstruct by taking forward genome slice and revcomp it.
+        # translate from the reverse-complement ORF DNA itself
+        # reconstruct by taking forward genome slice and revcomp it
         dna_forward_slice = seq[o["start"]:o["end"]]          # slice on forward genome
         dna_on_minus = dna_forward_slice.reverse_complement() # actual coding DNA on minus strand
         o["dna"] = str(dna_on_minus).upper()
