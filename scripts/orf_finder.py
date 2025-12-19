@@ -21,7 +21,6 @@ def find_orfs(seq_str: str, min_length: int, strand: str):
             codon = s[i:i+3]
 
             if codon in STOP_CODONS:
-                # if we had a start, close ORF at this stop
                 if start_pos is not None:
                     end = i + 3
                     length = end - start_pos
@@ -61,9 +60,9 @@ def map_rev_coords(orfs, genome_len: int):
 def main():
     parser = argparse.ArgumentParser(description="ORF Finder")
     parser.add_argument("--fasta", required=True, help="Input FASTA file")
-    parser.add_argument("--min-length", type=int, default=100, help="Minimum ORF length (bp)")
-    parser.add_argument("--out", default="results/orfs", help="Output prefix (default: results/orfs)")
-    parser.add_argument("--table", type=int, default=11, help="Translation table (default 11 for bacteria/E. coli)")
+    parser.add_argument("--min-length", type=int, default=100, help="Minimum ORF length")
+    parser.add_argument("--out", default="results/orfs", help="output prefix ")
+    parser.add_argument("--table", type=int, default=11, help="Translation table (default 11 for E. coli)")
     args = parser.parse_args()
 
     record = next(SeqIO.parse(args.fasta, "fasta"))
@@ -114,7 +113,7 @@ def main():
 
     print(f"Loaded {record.id}")
     print(f"Genome length: {genome_len} bp")
-    print(f"Found {len(orfs)} ORFs (min_length={args.min_length})")
+    print(f"Found {len(orfs)} ORFs")
     print(f"Wrote {csv_path}")
     print(f"Wrote {png_path}")
 
