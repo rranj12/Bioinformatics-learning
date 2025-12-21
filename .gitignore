@@ -1,0 +1,16 @@
+data/raw/*
+data/processed/*
+*.fastq
+*.fq
+*.fasta
+*.fa
+.ipynb_checkpoints/
+
+.venv/
+__pycache__/
+.ipynb_checkpoints/
+
+# BLAST databases
+*.nin
+*.nsq
+*.nhr
