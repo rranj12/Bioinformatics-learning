@@ -14,3 +14,50 @@ __pycache__/
 *.nin
 *.nsq
 *.nhr
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+.env
+
+# Jupyter
+.ipynb_checkpoints/
+
+# macOS
+.DS_Store
+
+# Bioinformatics outputs (large / regenerable)
+*.bam
+*.bai
+*.sam
+*.fastq
+*.fastq.gz
+*.fq
+*.fq.gz
+*.sra
+
+# STAR
+star_index/
+Aligned.out.sam
+*_STARtmp/
+
+# QC & plots (keep final images if you want)
+results/qc/
+results/*.png
+
+# Logs
+*.log
+
+# Conda
+*.conda
+
+# Reference genomes & annotations 
+data/reference/*.fa
+data/reference/*.fasta
+data/reference/*.gtfgot
+data/reference/*.gff
+data/reference/*.gff3
+
