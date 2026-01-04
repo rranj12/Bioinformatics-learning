@@ -1,7 +1,6 @@
 # Genomic Data Formats & File Handling
 
 ## Summary
-- Set up `compbio` conda environment with core bioinformatics tools
 - Downloaded E. coli reference genome (NC_000913.3) and parsed FASTA
 - Computed length, GC%, nucleotide counts, quality plot
   
